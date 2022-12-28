@@ -27,10 +27,10 @@ public class SwaggerConfig {
     public OpenAPI demoApi(@Value("REST API film microservice for challenge chapter 7 backend java Binar Academy") String appDescription,
                            @Value("v1.0.0") String appVersion
     ) {
-//        Server server = new Server();
-//        server.setUrl("https://microservicefilmchallenge7-production.up.railway.app/");
-//        List<Server> listOfServer = new ArrayList<>();
-//        listOfServer.add(server);
+        Server server = new Server();
+        server.setUrl("https://film-microservice-challenge8.up.railway.app/");
+        List<Server> listOfServer = new ArrayList<>();
+        listOfServer.add(server);
 
         return new OpenAPI()
                 .info(new Info()
@@ -42,6 +42,6 @@ public class SwaggerConfig {
                                 .name("Apache 2.0")
                                 .url("http://springdoc.org")
                         )
-                );
+                ).servers(listOfServer);
     }
 }
